@@ -1,9 +1,15 @@
 import Image from 'next/image'
+import { RefObject, useRef } from 'react';
 import Marquee from 'react-fast-marquee'
+import { useParallax } from 'react-scroll-parallax';
 
 export default function Intro(){
+    const {ref} = useParallax<HTMLDivElement>({
+        translateY: [-200, 200]
+    })
+    
     return (
-        <div className='w-full h-screen mb-8 flex justify-center items-center'>
+        <div ref={ref} className='w-full h-screen mb-8 flex justify-center items-center -z-20'>
             <Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={350} width={350} className='absolute'/>
             <div className='relative w-screen h-5/6'>
                 <Marquee className='relative w-full h-full -z-10 overflow-hidden' autoFill={true}>

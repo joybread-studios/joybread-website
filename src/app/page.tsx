@@ -5,6 +5,7 @@ import Header from "./components/header";
 import AboutUs from "./sections/about-us";
 import Intro from "./sections/intro";
 import Image from "next/image";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +29,8 @@ export default function Home() {
 
 
   return (
-    <div className="w-full h-full">
+    <ParallaxProvider>
+      <div className="w-full h-full">
       <div className={`fixed inset-0 flex items-center justify-center bg-black z-50 transition-opacity ease-out duration-1000 ${isLoading ? 'opacity-1' : 'opacity-0'}`}>
           <Image src="/JOYBREADLOGO.png" alt="Splash Screen Image" height={350} width={350} className={`transition-opacity ease-out duration-500 ${imageLoaded ? 'opacity-1' : 'opacity-0'}`}/>
       </div>
@@ -37,5 +39,6 @@ export default function Home() {
       <AboutUs />
       <Footer />
     </div>
+    </ParallaxProvider>
   );
 }
