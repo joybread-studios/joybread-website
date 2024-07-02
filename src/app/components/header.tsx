@@ -4,7 +4,7 @@ import Button from './button'
 
 export default function Header(){
 	return (
-		<div className='w-screen h-fit absolute flex justify-between items-center px-8'>
+		<div className='w-full h-fit absolute flex justify-between items-center pl-8 pr-4'>
 			<Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={250} width={250}/>
 			<div className='w-1/4 flex justify-evenly items-center'>
 				<Button href='#works'>Works</Button>
