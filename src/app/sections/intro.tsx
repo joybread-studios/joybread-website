@@ -3,7 +3,7 @@ import Marquee from 'react-fast-marquee'
 
 export default function Intro(){
     return (
-        <div className='w-full h-screen flex justify-center items-center'>
+        <div className='w-full h-screen mb-8 flex justify-center items-center'>
             <Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={350} width={350} className='absolute'/>
             <div className='relative w-screen h-5/6'>
                 <Marquee className='relative w-full h-full -z-10 overflow-hidden' autoFill={true}>

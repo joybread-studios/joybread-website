@@ -8,14 +8,14 @@ export default function AboutUs(){
     const isVisible = onScreen(sectionRef);
 
     return (
-        <div className='relative overflow-hidden'>
-            <div className='mt-24 relative w-[110%] h-fit p-12 bg-[#454059] overflow-hidden -translate-x-5 rotate-6 z-10'>
+        <div ref={sectionRef} className={`relative overflow-hidden transition ease-in-out duration-1000 ${isVisible ? 'translate-y-0' : 'translate-y-48'}`}>
+            <div className={`mt-24 relative w-[110%] h-fit p-12 bg-[#454059] overflow-hidden -translate-x-5 rotate-6 z-10`}>
                 <p className='text-6xl font-bold'>ABOUT US</p>
                 <Marquee direction='right' autoFill={true} className='absolute -left-[50px] -top-[24px] text-[#21232F] text-4xl blur-sm -z-10'>
                     <p className='font-bold'>ABOUT US&nbsp;&nbsp;&nbsp;</p>
                 </Marquee>
             </div>
-            <div className={`relative w-full h-[150vh] bg-[#454059] -translate-y-20 flex justify-evenly items-center -z-10 transition-transform duration-1000 ${isVisible ? 'transform rotate-x-0' : 'transform rotate-x-15'}`}>
+            <div className={`relative w-full h-[150vh] bg-[#454059] flex justify-evenly items-center -z-10 -translate-y-24`}>
                 <div className='w-full h-full flex flex-col justify-evenly items-center'>
                     <div className='flex flex-col w-1/2 items-center'>
                         <p className='text-4xl font-bold flex text-start'>WHO WE ARE</p>
