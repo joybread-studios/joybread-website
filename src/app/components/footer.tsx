@@ -4,8 +4,13 @@ import { TbMailFilled } from "react-icons/tb";
 import { IoIosArrowUp } from "react-icons/io";
 
 export default function Footer(){
+<<<<<<< HEAD
      return <div className="flex w-full pb-5 px-10 bg-[#131217] items-center">
         <div className="flex flex-col  w-screen sm:w-1/2 md:w-[35%] lg:w-[30%] xl:1/4">
+=======
+     return <div className="flex w-full pb-5 px-10 bg-[#1E1E1E] relative items-center">
+        <div className="flex flex-col w-full sm:w-1/2 md:w-[35%] lg:w-[30%] xl:1/4">
+>>>>>>> 3a121036d03b2956ea66a1b1562f2d1860bb2ed6
             
             <img src="/static/images/joybreadlogo.png" alt="joybreadlogo" />
             <div className="flex items-center text-center md:text-sm lg:text-[10px] xl:text-sm">
