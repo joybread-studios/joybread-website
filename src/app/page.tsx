@@ -1,7 +1,11 @@
 import Header from "./components/header";
+import Intro from "./sections/intro";
 
 export default function Home(){
   return (
-    <Header/>
+    <div>
+      <Header/>
+      <Intro/>
+    </div>
   )
 }
