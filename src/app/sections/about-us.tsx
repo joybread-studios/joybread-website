@@ -1,6 +1,12 @@
+'use client'
 import Marquee from "react-fast-marquee";
+import onScreen from "../hooks/onScreen";
+import { useRef } from "react";
 
 export default function AboutUs(){
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const isVisible = onScreen(sectionRef);
+
     return (
         <div className='relative overflow-hidden'>
             <div className='mt-24 relative w-[110%] h-fit p-12 bg-[#454059] overflow-hidden -translate-x-5 rotate-6 z-10'>
@@ -9,7 +15,7 @@ export default function AboutUs(){
                     <p className='font-bold'>ABOUT US&nbsp;&nbsp;&nbsp;</p>
                 </Marquee>
             </div>
-            <div className='relative w-full h-[150vh] bg-[#454059] -translate-y-20 flex justify-evenly items-center -z-10'>
+            <div className={`relative w-full h-[150vh] bg-[#454059] -translate-y-20 flex justify-evenly items-center -z-10 transition-transform duration-1000 ${isVisible ? 'transform rotate-x-0' : 'transform rotate-x-15'}`}>
                 <div className='w-full h-full flex flex-col justify-evenly items-center'>
                     <div className='flex flex-col w-1/2 items-center'>
                         <p className='text-4xl font-bold flex text-start'>WHO WE ARE</p>
