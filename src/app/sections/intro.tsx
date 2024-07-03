@@ -8,17 +8,19 @@ export default function Intro(){
         translateY: [-200, 200]
     })
     const [isMobile, setIsMobile] = useState<boolean>(false);
-	const checkIfMobile = () => {
-		if(window.innerWidth > 640) setIsMobile(true);
-		else setIsMobile(false);
-	}
+    const [isBigScreen, setIsBigScreen] = useState<boolean>(false);
+	const checkScreenSize = () => {
+        setIsMobile(window.innerWidth <= 640);
+        setIsBigScreen(window.innerWidth > 1536);
+    }
 
-	useEffect(() => {
-		window.addEventListener('resize', checkIfMobile);
-		return (() => {
-			window.removeEventListener('resize', checkIfMobile);
-		})
-	}, [isMobile]);
+    useEffect(() => {
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+        return () => {
+            window.removeEventListener('resize', checkScreenSize);
+        };
+    }, []);
 
     const marquee = () => {
         return <Marquee className='relative w-full h-full -z-10 overflow-hidden' autoFill={true}>
@@ -29,7 +31,7 @@ export default function Intro(){
     
     return (
         <div ref={ref} className='w-full h-screen mb-8 flex justify-center items-center -z-20'>
-            <Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={!isMobile ? 350 : 250} width={!isMobile ? 350 : 250} className='absolute'/>
+            <Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={!isMobile ? (!isBigScreen ? 350 : 600) : 250} width={!isMobile ? (!isBigScreen ? 350 : 600) : 250} className='absolute'/>
             <div className='relative w-screen h-5/6'>
                 
             </div>
