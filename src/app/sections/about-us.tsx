@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
 import onScreen from "../hooks/onScreen";
+import AboutComponent from "../components/about-component";
 
 export default function AboutUs(){
     const ref = useRef(null);
@@ -38,24 +39,12 @@ export default function AboutUs(){
             </div>
             <div className={`relative w-full h-[150vh] bg-[#454059] flex justify-evenly items-center z-10 -translate-y-24`}>
                 <div className='w-full h-full flex flex-col justify-evenly items-center translate-y-20'>
-                    <div ref={ref} className='flex flex-col w-2/3 sm:w-1/2 items-center'>
-                        <p className={`text-2xl sm:text-4xl 2xl:text-5xl font-bold flex text-start transition duration-1000 ease-in-out ${isVisible ? `${!isMobile ? '-translate-x-12' : ''}` : '-translate-x-[200%]'}`}>WHO WE ARE</p>
-                        <p className={`text-sm sm:text-base 2xl:text-xl text-[#B8A38D] text-justify transition duration-1000 ease-in-out ${isVisible ? '' : '-translate-x-[200%]'}`}>We are a team filled with passionate and determined computer science students based in the Philippines.</p>
-                    </div>
-                    <div ref={ref2} className='flex flex-col w-2/3 sm:w-1/2 items-center'>
-                        <p className={`text-2xl sm:text-4xl 2xl:text-5xl font-bold flex text-start transition duration-1000 ease-in-out ${isVisible2 ? `${!isMobile ? '-translate-x-12' : ''}` : '-translate-x-[200%]'}`}>MEET THE TEAM</p>
-                        <p className={`text-sm sm:text-base 2xl:text-xl text-[#B8A38D] text-justify transition duration-1000 ease-in-out ${isVisible2 ? '' : '-translate-x-[200%]'}`}>Antonio Garcia Jr. | Co-Founder | Frontend<br/>Elaijah Sapla | Co-Founder | Backend<br/>Richmond Viloria | Co-Founder | Fullstack</p>
-                    </div>
+                    <AboutComponent title={"WHO WE ARE"} text={"We are a team filled with passionate and determined computer science students based in the Philippines."} isMobile={isMobile} isBigScreen={isBigScreen} />
+                    <AboutComponent title='MEET THE TEAM' text={`Antonio Garcia Jr. | Co-Founder | Frontend  Elaijah Sapla | Co-Founder | Backend  Richmond Viloria | Co-Founder | Fullstack`} isMobile={isMobile} isBigScreen={isBigScreen}/>
                 </div>
-                <div className='w-full h-full flex flex-col justify-evenly items-center -translate-y-20'>
-                    <div ref={ref3} className='flex flex-col w-2/3 sm:w-1/2 items-center'>
-                        <p className={`text-2xl sm:text-4xl 2xl:text-5xl font-bold flex text-start transition duration-1000 ease-in-out ${isVisible3 ? `${!isMobile ? 'translate-x-12' : ''}` : 'translate-x-[200%]'}`}>WHAT WE DO</p>
-                        <p className={`text-sm sm:text-base 2xl:text-xl text-[#B8A38D] text-justify transition duration-1000 ease-in-out ${isVisible3 ? '' : 'translate-x-[200%]'}`}>Our company do various software development projects including website applications, mobile applications, gaming application and desktop applications.</p>
-                    </div>
-                    <div ref={ref4} className='flex flex-col w-2/3 sm:w-1/2 items-center'>
-                        <p className={`text-2xl sm:text-4xl 2xl:text-5xl font-bold flex text-start transition duration-1000 ease-in-out ${isVisible4 ? `${!isMobile ? 'translate-x-12' : ''}` : 'translate-x-[200%]'}`}>WHAT WE OFFER</p>
-                        <p className={`text-sm sm:text-base 2xl:text-xl text-[#B8A38D] text-justify transition duration-1000 ease-in-out ${isVisible4 ? '' : 'translate-x-[200%]'}`}>We offer a variety of benefits that includes giving an appropriate deadline, having a great and clear communication, and overall good and thorough quality of the application created by the team.</p>
-                    </div>
+                <div className='w-full h-full flex flex-col justify-evenly items-center -translate-y-16 2xl:-translate-y-20'>
+                    <AboutComponent title='WHAT WE DO' text='Our company do various software development projects including website applications, mobile applications, gaming application and desktop applications.' isMobile={isMobile} isBigScreen={isBigScreen} reverse={true}/>
+                    <AboutComponent title='WHAT WE OFFER' text='We offer a variety of benefits that includes giving an appropriate deadline, having a great and clear communication, and overall good and thorough quality of the application created by the team.' isMobile={isMobile} isBigScreen={isBigScreen} reverse={true}/>
                 </div>
             </div>
         </div>
