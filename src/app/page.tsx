@@ -51,6 +51,7 @@ export default function Home() {
       <Header />
       <Intro />
       <AboutUs />
+      <HireUs />
       <Footer />
     </div>
     </ParallaxProvider>
