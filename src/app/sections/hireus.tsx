@@ -1,15 +1,21 @@
+import Marquee from "react-fast-marquee";
 import Button from "../components/button"
 import { FaLinkedin } from "react-icons/fa";
 import { TbMailFilled } from "react-icons/tb";
 
 export default function HireUs(){
     return(
-        <div className="bg-[1D192B] ">
+        <div className="bg-[#1D192B] my-20">
+            {/* <div className="w-screen bg-[#1D192B]">
+                <div className="h-[150px] bg-[#454059] -skew-y-6 mb-[120px] -translate-y-[80px] lg:"></div>
+            </div> */}
+                <div className="relative">
+                    <h5 className="items-center flex justify-center absolute inset-0 z-10 text-9xl font-bold text-[#F9DEC1]">HIRE US</h5>
+                </div>
+            <Marquee autoFill={true}>
+                <h1 className="text-6xl p-3 mb-10 font-bold text-[#8B5A26] blur-sm">PLEASE</h1>
+            </Marquee>
 
-            <div className="flex justify-center mb-20 text-9xl font-bold text-color-[F9DEC1]">
-                <h5>HIRE US</h5>
-                
-            </div>
 
             <div className="flex justify-center items-center divide-x divide-solid">
                 <div className="flex flex-col w-full sm:w-1/2">

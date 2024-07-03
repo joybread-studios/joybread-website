@@ -8,6 +8,7 @@ export default function Home() {
     <div className='w-full h-full'>
       <Header/>
       <Intro/>
+      <HireUs />
       <Footer />
     </div>
   );
