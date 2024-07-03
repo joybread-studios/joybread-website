@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <ParallaxProvider>
       <div className="w-full h-full">
-      <div className={`fixed inset-0 flex items-center justify-center bg-black z-50 transition-opacity ease-out duration-1000 ${isLoading ? 'opacity-1' : 'opacity-0'}`}>
+      <div className={`fixed inset-0 flex items-center justify-center bg-black z-50 transition-opacity ease-out duration-1000 ${isLoading ? 'opacity-1' : 'opacity-0 hidden'}`}>
           <Image src="/JOYBREADLOGO.png" alt="Splash Screen Image" height={350} width={350} className={`transition-opacity ease-out duration-500 ${imageLoaded ? 'opacity-1' : 'opacity-0'}`}/>
       </div>
       <Header />

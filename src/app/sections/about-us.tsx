@@ -1,7 +1,6 @@
 'use client'
 import { useRef } from "react";
 import Marquee from "react-fast-marquee";
-import { useParallax } from "react-scroll-parallax";
 import onScreen from "../hooks/onScreen";
 
 export default function AboutUs(){
@@ -15,10 +14,10 @@ export default function AboutUs(){
     const isVisible4 = onScreen(ref4);
     
     return (
-        <div className={`relative overflow-hidden`}>
-            <div className={`mt-24 relative w-[110%] h-fit p-12 bg-[#454059] overflow-hidden -translate-x-5 rotate-6 z-20`}>
+        <div id='about' className={`relative overflow-hidden`}>
+            <div className={`mt-24 relative w-[140%] sm:w-[110%] h-fit p-12 bg-[#454059] overflow-hidden -translate-x-5 rotate-6 z-20`}>
                 <p className='text-6xl font-bold'>ABOUT US</p>
-                <Marquee direction='right' autoFill={true} className='absolute -left-[50px] -top-[24px] text-[#21232F] text-4xl blur-sm -z-10'>
+                <Marquee direction='right' autoFill={true} className='absolute -left-[25px] sm:-left-[50px] -top-[24px] text-[#21232F] text-4xl blur-sm -z-10'>
                     <p className='font-bold'>ABOUT US&nbsp;&nbsp;&nbsp;</p>
                 </Marquee>
             </div>
