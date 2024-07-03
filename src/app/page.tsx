@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from "react";
 import Footer from "./components/footer";
+import HireUs from "./sections/hireus";
 import Header from "./components/header";
 import AboutUs from "./sections/about-us";
 import Intro from "./sections/intro";
@@ -50,6 +51,7 @@ export default function Home() {
       <Header />
       <Intro />
       <AboutUs />
+      <HireUs />
       <Footer />
     </div>
     </ParallaxProvider>
