@@ -5,6 +5,7 @@ import HireUs from "./sections/hireus";
 import Header from "./components/header";
 import AboutUs from "./sections/about-us";
 import Intro from "./sections/intro";
+import Works from "./components/works";
 import Image from "next/image";
 import { ParallaxProvider } from "react-scroll-parallax";
 
@@ -50,6 +51,7 @@ export default function Home() {
       </div>
       <Header />
       <Intro />
+      <Works />
       <AboutUs />
       <HireUs />
       <Footer />
