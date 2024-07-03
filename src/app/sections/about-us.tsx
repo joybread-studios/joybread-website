@@ -14,23 +14,25 @@ export default function AboutUs(){
     const isVisible4 = onScreen(ref4);
 
     const [isMobile, setIsMobile] = useState<boolean>(false);
-	const checkIfMobile = () => {
-		if(window.innerWidth < 640) setIsMobile(true);
-		else setIsMobile(false);
-	}
+    const [isBigScreen, setIsBigScreen] = useState<boolean>(false);
+	const checkScreenSize = () => {
+        setIsMobile(window.innerWidth <= 640);
+        setIsBigScreen(window.innerWidth > 1536);
+    }
 
-	useEffect(() => {
-		window.addEventListener('resize', checkIfMobile);
-		return (() => {
-			window.removeEventListener('resize', checkIfMobile);
-		})
-	}, [isMobile]);
+    useEffect(() => {
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+        return () => {
+            window.removeEventListener('resize', checkScreenSize);
+        };
+    }, []);
     
     return (
         <div id='about' className={`relative overflow-hidden`}>
-            <div className={`mt-24 relative w-[140%] sm:w-[110%] h-fit p-12 bg-[#454059] overflow-hidden -translate-x-5 rotate-6 z-20`}>
+            <div className={`mt-24 relative w-[140%] sm:w-[110%] h-fit p-12 bg-[#454059] overflow-hidden -translate-x-5 2xl:rotate-3 rotate-6 z-20`}>
                 <p className='text-4xl sm:text-6xl font-bold'>ABOUT US</p>
-                <Marquee direction='right' autoFill={true} className='absolute -left-[25px] sm:-left-[50px] -top-[24px] text-[#21232F] text-2xl sm:text-4xl blur-[2px] sm:blur-sm -z-10'>
+                <Marquee direction='right' autoFill={true} className='absolute -left-[1.56rem] sm:-left-[3.12rem] -top-[1.5rem] lg:-top-[1.25rem] text-[#21232F] text-2xl sm:text-4xl blur-[2px] sm:blur-sm -z-10'>
                     <p className='font-bold'>ABOUT US&nbsp;&nbsp;&nbsp;</p>
                 </Marquee>
             </div>
