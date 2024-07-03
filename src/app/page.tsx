@@ -10,6 +10,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [hidden, setHidden] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(false);
 
 
@@ -22,9 +23,14 @@ export default function Home() {
       setImageLoaded(true); // Set imageLoaded to true after 100ms delay
   }, 500);
 
+    const hidden = setTimeout(() => {
+      setHidden(false);
+    }, 3000)
+
     return () => {
       clearTimeout(timer);
       clearTimeout(imageTimer);
+      clearTimeout(hidden);
     }
   }, []);
 
@@ -47,15 +53,15 @@ export default function Home() {
   return (
     <ParallaxProvider>
       <div className="w-full h-full">
-      <div className={`fixed inset-0 flex items-center justify-center bg-black z-50 transition-opacity ease-out duration-1000 ${isLoading ? 'opacity-1' : 'opacity-0 hidden'}`}>
-          <Image src="/JOYBREADLOGO.png" alt="Splash Screen Image" height={!isMobile ? (!isBigScreen ? 350 : 600) : 250} width={!isMobile ? (!isBigScreen ? 350 : 600) : 250} className={`transition-opacity ease-out duration-500 ${imageLoaded ? 'opacity-1' : 'opacity-0'}`}/>
+        <div className={`fixed inset-0 flex items-center justify-center bg-black z-50 transition-opacity ease-out duration-1000 ${isLoading ? 'opacity-1' : 'opacity-0'} ${hidden ? '' : 'hidden'}`}>
+            <Image src="/JOYBREADLOGO.png" alt="Splash Screen Image" height={!isMobile ? (!isBigScreen ? 350 : 600) : 250} width={!isMobile ? (!isBigScreen ? 350 : 600) : 250} className={`transition-opacity ease-out duration-500 ${imageLoaded ? 'opacity-1' : 'opacity-0'}`}/>
+        </div>
+        <Header />
+        <Intro />
+        <AboutUs />
+        <HireUs /> 
+        <Footer />
       </div>
-      <Header />
-      <Intro />
-      <AboutUs />
-      <HireUs />
-      <Footer />
-    </div>
     </ParallaxProvider>
   );
 }
