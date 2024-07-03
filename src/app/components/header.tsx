@@ -26,7 +26,7 @@ const Header : React.FC = () => {
 	return (
 		<div>
 			<div ref={ref} className='w-full h-fit absolute flex justify-between items-center z-40'>
-				<Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={350} width={350} className={`${!isMobile ? (isBigScreen ? '' : 'p-4') : 'p-4'}`}/>
+				<Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={isBigScreen ? 350 : 250} width={isBigScreen ? 350 : 250} className={`${!isMobile ? (isBigScreen ? 'p-4' : '') : 'p-4'}`}/>
 				<div className='w-1/4 flex justify-evenly items-center'>
 					{!isMobile ? 
 						<>
@@ -68,7 +68,7 @@ const StickyHeader : React.FC<StickyHeaderProps> = ({isVisible}) => {
 	
 	return (
 		<div className={`w-full fixed flex justify-between items-center transition duration-1000 ease-in-out bg-[#131217]/[50%] ${isVisible ? (isBigScreen ? '-translate-y-64' : '-translate-y-32') : 'translate-y-0'} z-50`}>
-			<Image src='/static/images/Bread.png' alt='bread' height={isBigScreen ? 200 : 100} width={isBigScreen ? 200 : 100} className={`${!isMobile ? (isBigScreen ? '' : 'p-4') : 'p-4'}`}/>
+			<Image src='/static/images/Bread.png' alt='bread' height={isBigScreen ? 150 : 100} width={isBigScreen ? 150 : 100} className={`${!isMobile ? (isBigScreen ? '' : 'p-4') : 'p-4'}`}/>
 			<div className='w-1/4 flex justify-evenly items-center'>
 				{!isMobile ? 
 						<>
