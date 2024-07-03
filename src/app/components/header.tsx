@@ -10,7 +10,7 @@ const Header : React.FC = () => {
 	const isVisible = onScreen(ref);
 
 	const checkIfMobile = () => {
-		if(window.innerWidth < 640) setIsMobile(true);
+		if(window.innerWidth > 640) setIsMobile(true);
 		else setIsMobile(false);
 	}
 
@@ -24,7 +24,7 @@ const Header : React.FC = () => {
 	return (
 		<div>
 			<div ref={ref} className='w-full h-fit absolute flex justify-between items-center z-40'>
-				<Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={250} width={250} className={`${isMobile ? '' : 'p-4'}`}/>
+				<Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={250} width={250} className={`${!isMobile ? '' : 'p-4'}`}/>
 				<div className='w-1/4 flex justify-evenly items-center'>
 					{isMobile ? 
 						<>
@@ -51,7 +51,7 @@ interface StickyHeaderProps {
 const StickyHeader : React.FC<StickyHeaderProps> = ({isVisible}) => {
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 	const checkIfMobile = () => {
-		if(window.innerWidth < 640) setIsMobile(true);
+		if(window.innerWidth > 640) setIsMobile(true);
 		else setIsMobile(false);
 	}
 
@@ -64,7 +64,7 @@ const StickyHeader : React.FC<StickyHeaderProps> = ({isVisible}) => {
 	
 	return (
 		<div className={`w-full fixed flex justify-between items-center transition duration-1000 ease-in-out bg-[#131217]/[50%] ${isVisible ? '-translate-y-32' : 'translate-y-0'} z-50`}>
-			<Image src='/static/images/Bread.png' alt='bread' height={100} width={100} className={`${isMobile ? '' : 'p-4'}`}/>
+			<Image src='/static/images/Bread.png' alt='bread' height={100} width={100} className={`${!isMobile ? '' : 'p-4'}`}/>
 			<div className='w-1/4 flex justify-evenly items-center'>
 				{isMobile ? 
 						<>
