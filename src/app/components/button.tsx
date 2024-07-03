@@ -12,7 +12,7 @@ const Button : React.FC<ButtonProps> = ({href, className, withBorder = false, ch
     const combinedClassName = `font-bold ${className} ${withBorder ? 'fill-button' : ''}`
 
     return (
-        <Link href={href} className={combinedClassName}>{children}</Link>
+        <Link href={href} className={combinedClassName} scroll={true}>{children}</Link>
     )
 }
 
