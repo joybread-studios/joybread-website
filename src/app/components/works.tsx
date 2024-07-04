@@ -40,7 +40,7 @@ export default function Works(){
                 end:"bottom bottom",
                 pin:".right",
                 animation: animation,
-                markers: true,
+                markers: false,
             })
             projectName.forEach((projectlist, index) => {
                 console.log(projectName)
@@ -55,7 +55,7 @@ export default function Works(){
                     end:"bottom top",
                     animation: animation,
                     scrub: 1,
-                    markers: true,
+                    markers: false,
                 })
             })
 
@@ -73,7 +73,7 @@ export default function Works(){
                     <h5 className="items-center flex justify-end font-bold text-[#F9DEC1] text-6xl sm:text-8xl">WORKS</h5>
                 </div>
                 <div className="-translate-y-[50px]">
-                    <Marquee direction="right" autoFill={true} className="absolute -z-10">
+                    <Marquee direction="right" autoFill={true} className="absolute -z-10 overflow-hidden">
                         <h1 className="p-3 mb-10 font-bold text-[#8B5A26] blur-sm text-3xl sm:text-6xl -z-10">WORKS</h1>
                     </Marquee>
                 </div>
@@ -90,7 +90,7 @@ export default function Works(){
                 </div>
 
 
-                <div className="w-1/2 right relative max-h-[2000px]">
+                <div className="w-1/2 right relative max-h-[2000px] overflow-hidden">
                     {projects.map(project =>(
                         <div className="photo px-[5%] pt-[20%] absolute flex flex-col justify-center items-center ">
                             <div className="">
