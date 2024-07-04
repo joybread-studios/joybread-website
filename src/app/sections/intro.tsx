@@ -31,7 +31,7 @@ export default function Intro(){
     
     return (
         <div ref={ref} className='w-full h-screen mb-8 flex justify-center items-center -z-20'>
-            <Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={isMobile ? 250 : (isBigScreen ? 600 : 350)} width={isMobile ? 250 : (isBigScreen ? 600 : 350)} className='absolute'/>
+            <Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={isMobile ? 250 : (isBigScreen ? 600 : 350)} width={isMobile ? 250 : (isBigScreen ? 600 : 350)} className='absolute -z-20'/>
             <div className='relative w-screen h-5/6'>
                 
             </div>
