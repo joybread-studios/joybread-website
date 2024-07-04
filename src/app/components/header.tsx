@@ -24,7 +24,7 @@ const Header : React.FC = () => {
     }, []);
 
 	return (
-		<div>
+		<div id='intro'>
 			<div ref={ref} className='w-full h-fit absolute flex justify-between items-center z-40'>
 				<Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={isBigScreen ? 350 : 250} width={isBigScreen ? 350 : 250} className={`${!isMobile ? (isBigScreen ? 'p-4' : '') : 'p-4'}`}/>
 				<div className='w-1/4 flex justify-evenly items-center'>
