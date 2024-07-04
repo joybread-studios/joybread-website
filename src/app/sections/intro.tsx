@@ -24,14 +24,14 @@ export default function Intro(){
 
     const marquee = () => {
         return <Marquee className='relative w-full h-full -z-10 overflow-hidden' autoFill={true}>
-                <Image src='/image 1.png' alt='placeholder' height={!isMobile ? 600 : 400} width={!isMobile ? 600 : 400} className='blur-sm object-contain'/>
-                <Image src='/image 3.png' alt='placeholder 2' height={!isMobile ? 400 : 300} width={!isMobile ? 400 : 300} className='blur-sm object-contain'/>
+                <Image src='/image 1.png' alt='placeholder' height={isMobile ? 400 : 600} width={isMobile ? 400 : 600} className='blur-sm object-contain'/>
+                <Image src='/image 3.png' alt='placeholder 2' height={isMobile ? 300 : 400} width={isMobile ? 300 : 400} className='blur-sm object-contain'/>
             </Marquee>
     }
     
     return (
         <div ref={ref} className='w-full h-screen mb-8 flex justify-center items-center -z-20'>
-            <Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={!isMobile ? (!isBigScreen ? 350 : 600) : 250} width={!isMobile ? (!isBigScreen ? 350 : 600) : 250} className='absolute -z-20'/>
+            <Image src='/JOYBREADLOGO.png' alt='joybread studios logo' height={isMobile ? 250 : (isBigScreen ? 600 : 350)} width={isMobile ? 250 : (isBigScreen ? 600 : 350)} className='absolute -z-20'/>
             <div className='relative w-screen h-5/6'>
                 
             </div>
