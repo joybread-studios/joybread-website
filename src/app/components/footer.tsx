@@ -27,7 +27,7 @@ export default function Footer(){
             </div>
         </div>
         <div className="absolute right-[5%] hidden sm:block ">
-            <Button href=''><IoIosArrowUp size={60}/></Button>
+            <Button href='#intro'><IoIosArrowUp size={60}/></Button>
         </div>
      </div>
     
