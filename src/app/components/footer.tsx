@@ -3,12 +3,13 @@ import { FaGithubSquare } from "react-icons/fa";
 import { TbMailFilled } from "react-icons/tb";
 import { IoIosArrowUp } from "react-icons/io";
 import Button from "./button";
+import Image from 'next/image'
 
 export default function Footer(){
      return <div className="flex w-full pb-5 px-10 bg-[#1E1E1E] relative items-center">
         <div className="flex flex-col w-full sm:w-1/2 md:w-[35%] lg:w-[30%] xl:1/4">
             
-            <img src="/static/images/joybreadlogo.png" alt="joybreadlogo" />
+            <Image src="/static/images/joybreadlogo.png" alt="joybreadlogo" height={200} width={200}/>
             <div className="flex justify-between items-center text-center md:text-sm lg:text-[10px] xl:text-sm">
                 <h5 className="block lg:hidden">
                     © 2024 JOYBREAD <br />STUDIOS

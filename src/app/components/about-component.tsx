@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import onScreen from "../hooks/onScreen";
+import onScreen from "../hooks/useScreen";
 
 interface AboutComponentProps{
     title: string;
