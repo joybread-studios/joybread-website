@@ -69,7 +69,7 @@ export default function Works(){
     
 
     return(
-        <div className="w-full bg-[#131217] mt-[200px] relative">
+        <div id='works' className="w-full bg-[#131217] mt-[200px] relative">
             <div className="-skew-y-6 lg:-skew-y-3 bg-[#131217] -translate-y-[100px] relative">
                 <div className="z-20">
                     <h5 className="items-center flex justify-end font-bold text-[#F9DEC1] text-6xl sm:text-8xl">WORKS</h5>
