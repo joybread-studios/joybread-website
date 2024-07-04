@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Image from 'next/image'
+
 export default function Works(){
     
 
@@ -82,19 +84,19 @@ export default function Works(){
             <div className="flex my-[100px] bg-[#131217]">
                 
                 <div className="flex flex-col gallery justify-center w-1/2 text-center">
-                    {projects.map(project => (
-                        <div className="projectname min-h-screen content-center">
-                            <div key={project.id} id={`project${project.id}`} className="text-6xl"><h1>{project.name}</h1></div>
+                    {projects.map((project, index) => (
+                        <div key={index} className="projectname min-h-screen content-center">
+                            <div id={`project${project.id}`} className="text-6xl"><h1>{project.name}</h1></div>
                         </div>
                     ))}
                 </div>
 
 
                 <div className="w-1/2 right relative max-h-[2000px] overflow-hidden">
-                    {projects.map(project =>(
-                        <div className="photo px-[5%] pt-[20%] absolute flex flex-col justify-center items-center ">
+                    {projects.map((project, index) =>(
+                        <div key={index} className="photo px-[5%] pt-[20%] absolute flex flex-col justify-center items-center ">
                             <div className="">
-                            <a className="" href=""><img src="/image 1.png" alt=""  className="object-contain w-screen" /></a>
+                                <Image src="/image 1.png" alt="project" height={400} width={400} className="object-contain w-screen" />
                             </div>
                             <div className="w-full flex justify-between px-[5%] py-[2%]">
                                 <div className="text-m"><h1>mga bagay bagay</h1><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur dicta eius praesentium nisi minus delectus ratione! Doloribus qui quam, architecto animi cupiditate reiciendis exercitationem aut corrupti placeat unde id corporis. euphoria</p></div>
@@ -105,7 +107,9 @@ export default function Works(){
                                         
                 </div>
             </div>
+            <div className='absolute w-full bg-[#131217] -translate-y-44 h-96'>
 
+            </div>
         </div>
         
     )

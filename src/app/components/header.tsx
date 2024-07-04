@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Button from './button'
-import onScreen from '../hooks/onScreen'
+import onScreen from '../hooks/useScreen'
 import React, { useEffect, useRef, useState } from 'react'
 
 const Header : React.FC = () => {

@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
-import onScreen from "../hooks/onScreen";
+import onScreen from "../hooks/useScreen";
 import AboutComponent from "../components/about-component";
 
 export default function AboutUs(){
