@@ -1,11 +1,10 @@
 import Marquee from "react-fast-marquee";
 import projects from './projects.json';
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import next from "next";
 import { BsArrowRightSquareFill } from "react-icons/bs";
+import Image from "next/image";
 export default function Works(){
     
     useEffect(() => {
@@ -96,8 +95,8 @@ export default function Works(){
                 
                 <div className="flex flex-col gallery justify-center w-1/2 text-center py-[30vh]">
                     {projects.map(project => (
-                        <div className="projectname min-h-[40vh] content-center snap-start text-[#F9DEC1]">
-                            <div key={project.id} id={`project${project.id}`} className=" text-6xl flex justify-center items-center"><BsArrowRightSquareFill className="arrow text-6xl text-[#F9DEC1] mr-10"/><h1>{project.name}</h1></div>
+                        <div key={project.id} className="projectname min-h-[40vh] content-center snap-start text-[#F9DEC1]">
+                            <div id={`project${project.id}`} className=" text-6xl flex justify-center items-center"><BsArrowRightSquareFill className="arrow text-6xl text-[#F9DEC1] mr-10"/><h1>{project.name}</h1></div>
                         </div>
                     ))}
                 </div>
@@ -107,17 +106,26 @@ export default function Works(){
                 
                 <div className="w-1/2 right relative max-h-[2000px] overflow-hidden">
                     {projects.map(project =>(
-                        <div className="px-[5%] pt-[20%] absolute flex flex-col justify-center items-center">
+                        <div key={project.id} className="px-[5%] pt-[20%] absolute flex flex-col justify-center items-center">
                             <div className="p-1 w-fill overflow-hidden">
                                 <div className="photo">
-                                    <a className="" href=""><img src="/image 1.png" alt=""  className="object-contain w-screen" /></a>
+                                    <a className="" href="">
+                                        <Image
+                                        src="/image 1.png"
+                                        alt={project.name}
+                                        className="object-contain w-screen" />
+                                    </a>
                                 </div>
                             </div>
                             <div className="w-full flex justify-between px-[5%] py-[2%]">
                                 <div className="text-m descriptions">
                                     <div className="flex mb-10">
                                         {project.language.map(languages => (
-                                            <img src={`./static/icons/${languages}.png`} alt={languages} className="mx-1 h-auto w-[8px] sm:w-[12px] md:w-[16px] lg:w-[32px] xl:w[64px]"/>
+                                            <Image 
+                                            key={project.id}
+                                            src={`./static/icons/${languages}.png`} 
+                                            alt={languages} 
+                                            className="mx-1 h-auto w-[8px] sm:w-[12px] md:w-[16px] lg:w-[32px] xl:w[64px]"/>
                                         ))}
                                     </div>
                                     <p>{project.description}</p>
