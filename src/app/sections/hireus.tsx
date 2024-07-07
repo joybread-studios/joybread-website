@@ -39,7 +39,7 @@ export default function HireUs(){
                         </form>
                     </div>
                 </div>
-                <div className="flex flex-col w-1/2 hidden sm:block">
+                <div className="flex-col w-1/2 hidden sm:block">
                     <ul className="flex flex-col justify-center h-fill items-center">
                         <li className="flex mb-4 items-center">
                             <FaLinkedin className="text-4xl" />
