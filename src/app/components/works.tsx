@@ -111,9 +111,11 @@ export default function Works(){
                                 <div className="photo">
                                     <a className="" href="">
                                         <Image
+                                        width={500}
+                                        height={500}
                                         src="/image 1.png"
                                         alt={project.name}
-                                        className="object-contain w-screen" />
+                                        className="object-contain h-auto w-screen" />
                                     </a>
                                 </div>
                             </div>
@@ -122,8 +124,10 @@ export default function Works(){
                                     <div className="flex mb-10">
                                         {project.language.map(languages => (
                                             <Image 
+                                            width={0}
+                                            height={0}
                                             key={project.id}
-                                            src={`./static/icons/${languages}.png`} 
+                                            src={`/static/icons/${languages}.png`} 
                                             alt={languages} 
                                             className="mx-1 h-auto w-[8px] sm:w-[12px] md:w-[16px] lg:w-[32px] xl:w[64px]"/>
                                         ))}
