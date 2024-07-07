@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BsArrowRightSquareFill } from "react-icons/bs";
 import Image from "next/image";
+
 export default function Works(){
     
     useEffect(() => {
@@ -79,7 +80,7 @@ export default function Works(){
     
 
     return(
-        <div className="w-full bg-[#131217] mt-[200px] relative">
+        <div id='works' className="w-full bg-[#131217] mt-[200px] relative">
             <div className="-skew-y-6 lg:-skew-y-3 bg-[#131217] -translate-y-[100px] relative">
                 <div className="z-20">
                     <h5 className="items-center flex justify-end font-bold text-[#F9DEC1] text-6xl sm:text-8xl">WORKS</h5>
@@ -91,8 +92,7 @@ export default function Works(){
                 </div>
             </div>
 
-            <div className="flex bg-[#131217] box">
-                
+            <div className="flex bg-[#131217] box">     
                 <div className="flex flex-col gallery justify-center w-1/2 text-center py-[30vh]">
                     {projects.map(project => (
                         <div key={project.id} className="projectname min-h-[40vh] content-center snap-start text-[#F9DEC1]">
@@ -139,7 +139,9 @@ export default function Works(){
                                         
                 </div>
             </div>
+            <div className='absolute w-full bg-[#131217] -translate-y-44 h-96'>
 
+            </div>
         </div>
         
     )

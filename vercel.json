@@ -1,0 +1,9 @@
+{
+    "git": {
+    "deploymentEnabled": {
+      "Tony": false,
+      "glenn": false,
+      "test-main": false
+    }
+  }
+}

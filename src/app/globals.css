@@ -16,3 +16,7 @@ body {
   background-color: #5662A8;
   border-radius: 0.25rem;
 }
+
+.fill-button:hover {
+  background-color: #3f487c;
+}
