@@ -1,16 +1,18 @@
 import Marquee from "react-fast-marquee";
 import projects from './projects.json';
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BsArrowRightSquareFill } from "react-icons/bs";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
 
 export default function Works(){
     
-    useEffect(() => {
-        let ctx = gsap.context(() =>{
-            gsap.registerPlugin(ScrollTrigger);
+    const container = useRef(null);
+
+    useGSAP(() => {
+        gsap.registerPlugin(ScrollTrigger);
             let photos = document.querySelectorAll(".photo")
             let projectName = document.querySelectorAll(".projectname")
             let description = document.querySelectorAll(".descriptions")
@@ -71,16 +73,84 @@ export default function Works(){
 
 
             })
+    }, {scope: container})
 
-        })
-        return () => ctx.revert();
-    }, [])
+
+    // useEffect(() => {
+    //     let ctx = gsap.context(() =>{
+
+
+    //         gsap.registerPlugin(ScrollTrigger);
+    //         let photos = document.querySelectorAll(".photo")
+    //         let projectName = document.querySelectorAll(".projectname")
+    //         let description = document.querySelectorAll(".descriptions")
+    //         let links = document.querySelectorAll(".link")
+    //         let arrows = document.querySelectorAll(".arrow")
+
+    //         const animation = gsap.timeline()
+    //         .set([photos[0], description[0], links[0]], {opacity: 1, scale:1},0)
+    //         .set(projectName[0], {color:"#F9DEC1"}, 0)
+    //         .set(arrows[0], {scale: 1}, 0)
+            
+
+    //         ScrollTrigger.create({
+    //             trigger:".gallery",
+    //             start: "top top",
+    //             end:"bottom bottom",
+    //             pin:".right",
+    //             animation: animation,
+    //             markers: false,
+    //             snap: 1 / (projectName.length - 1)
+    //         })
+
+            
+    //         projectName.forEach((projectlist, i ) => {
+    //             let currentIndex = i
+    //             let next = (currentIndex < projectName.length ? i + 1 : i)
+
+    //             const animation = gsap.timeline()
+                    
+    //                 .set(photos[next], { yPercent:-200, scale: 1,}, 0)
+    //                 .to(photos[i], {xPercent: 100, scale: 0, opacity:0, duration: 5 }, ) 
+    //                 .to(photos[next], { yPercent:0, scale: 1, duration: 10}, 5)
+                    
+    //                 .set(description[next], {xPercent:-200, opacity:1, scale: 1}, 0)
+    //                 .to(description[i], {xPercent: -200, opacity: 0, scale: 0, duration: 5}, 0)
+    //                 .to(description[next], {xPercent:0, opacity:1, scale: 1, stagger: 3, delay: 5,duration: 10}, 5)
+                    
+    //                 .set(links[next], {yPercent:-50, opacity:0, scale: 0}, 0)
+    //                 .to(links[i], {xPercent:200,opacity: 0, scale: 0, duration:5},0)
+    //                 .to(links[next], {yPercent: 0, opacity:1,scale: 1, duration: 10, delay: 5}, 5)
+                    
+    //                 .set(projectName[next], {color:"#48443f"}, 0)
+    //                 .to(projectName[i], {color:"#48443f", duration:5},0)
+    //                 .to(projectName[next], {color:"#F9DEC1", duration: 10, delay: 5}, 5)
+
+    //                 .set(arrows[next], {scale: 0}, 0)
+    //                 .to(arrows[i], {scale: 0, duration:10 },0)
+    //                 .to(arrows[next], {scale: 1, duration: 10, delay: 5}, 5)
+                
+    //             ScrollTrigger.create({
+    //                 trigger: projectName[i],
+    //                 start:"top top",
+    //                 end:"bottom 10%",
+    //                 animation: animation,
+    //                 scrub: 1,
+    //                 markers: false,
+    //             })
+
+
+    //         })
+
+    //     })
+    //     return () => ctx.revert();
+    // }, [])
 
    
     
 
     return(
-        <div id='works' className="w-full bg-[#131217] mt-[200px] relative">
+        <div id='works' ref={container} className="w-full bg-[#131217] mt-[200px] relative">
             <div className="-skew-y-6 lg:-skew-y-3 bg-[#131217] -translate-y-[100px] relative">
                 <div className="z-20">
                     <h5 className="items-center flex justify-end font-bold text-[#F9DEC1] text-6xl sm:text-8xl">WORKS</h5>
