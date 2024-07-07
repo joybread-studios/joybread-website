@@ -5,7 +5,7 @@ import { TbMailFilled } from "react-icons/tb";
 
 export default function HireUs(){
     return(
-        <div className="bg-[#1D192B] relative">
+        <div id='hire-us' className="bg-[#1D192B] relative">
             <div className="mb-10 absolute w-full h-[200px] -skew-y-6 -translate-y-[200px] bg-[#454059] lg:-skew-y-3"></div>
 
             <div className="relative">
